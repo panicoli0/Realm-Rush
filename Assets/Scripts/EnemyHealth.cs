@@ -2,11 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Enemy))]
 public class EnemyHealth : MonoBehaviour
 {
-    [SerializeField] int health = 10;
-    [SerializeField] int damagePerHit = 2;
+    [SerializeField] int maxHP = 5;
+    //[SerializeField] int damagePerHit = 2;
+
+    [Tooltip("Add hp to the enemy when he dies")]
+    public int difficultyRamp = 1;
+
+    int currentHP;
+
     Enemy enemy;
+
+    void OnEnable()
+    {
+        currentHP = maxHP;    
+    }
 
     void Start()
     {
@@ -15,11 +27,20 @@ public class EnemyHealth : MonoBehaviour
 
     void OnParticleCollision(GameObject other)
     {
-        health -= damagePerHit;
-        if (health <= 0)
+        ProcessHit();
+    }
+
+    void ProcessHit()
+    {
+        currentHP--;
+
+        if (currentHP <= 0)
         {
             gameObject.SetActive(false);
             enemy.RewardGold();
+            maxHP += difficultyRamp; //Aumenta la dificultad con cada muerte
+            Debug.Log(maxHP);
         }
+
     }
 }

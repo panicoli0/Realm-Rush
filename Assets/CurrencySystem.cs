@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class CurrencySystem : MonoBehaviour
 {
@@ -10,9 +11,16 @@ public class CurrencySystem : MonoBehaviour
     [SerializeField] int currentBalance;
     public int CurrentBalance { get { return currentBalance; } }
 
+    [SerializeField] TextMeshProUGUI goldBalanceText;
+
     void Awake()
     {
         currentBalance = startingBalance;
+    }
+
+    void Update()
+    {
+        goldBalanceText.text = "Gold: " + currentBalance;
     }
 
     public void Deposit(int amount)

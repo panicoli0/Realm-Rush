@@ -164,8 +164,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85fc62e03130048e0ac9ba05d132fd68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  health: 8
   damagePerHit: 2
+  difficultyRamp: 2
 --- !u!114 &2024533390414756688
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -178,3 +179,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df01b52b8ece8410ebdc3aa334408c39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rewardGold: 0
+  penaltyGold: 0
