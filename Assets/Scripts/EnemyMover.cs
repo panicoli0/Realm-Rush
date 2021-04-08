@@ -59,7 +59,6 @@ public class EnemyMover : MonoBehaviour
             }
         }
         enemy.PenaltyGold();
-        Debug.Log("ME ESTAN ROBANDO");
         gameObject.SetActive(false);
     }
 }

@@ -20,7 +20,6 @@ public class EnemyHealth : MonoBehaviour
         {
             gameObject.SetActive(false);
             enemy.RewardGold();
-            Debug.Log("DAME GUITA QUE MATE A UN LOCO");
         }
     }
 }
